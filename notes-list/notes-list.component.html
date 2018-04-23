@@ -1,0 +1,13 @@
+<h1>Product List</h1>
+<p>Add, View and Edit your products below</p>
+
+<input [(ngModel)]="content" placeholder="Enter Product Name" class="input">
+
+
+<button class="button is-success" (click)="createNote()" [disabled]="content?.length < 2 || content?.length > 200">
+  Add
+</button>
+<hr>
+<div *ngFor="let note of notes | async">
+  <note-detail [note]="note"></note-detail>
+</div>
